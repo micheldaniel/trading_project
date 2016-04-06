@@ -1,0 +1,7 @@
+#home.verstopt, #change.verstopt, #white.verstopt, #show.verstopt {
+	display: none;
+}
+
+#home.zichtbaar, #change.zichtbaar, #white.zichtbaar, #show.zichtbaar {
+	display: block;
+}

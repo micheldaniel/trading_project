@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Load javascript
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		
+		Load balance 
+		<script>
+			
+			//Get url
+			$.get("/api/bittrex/balance", function(raw_data){
+				var data = JSON.stringify( raw_data)
+				
+				
+			var text = "";
+			var i = 0;
+		    for (i = 0; i < data.length; i++) {
+		    	text += "<tr><td>"+data[i].coin_tag +"</td><td>"+data[i].balance+"</td><td>"+data[i].available+"</td><td>"+data[i].pending+"</td></tr>"
+		    };
+				
+				
+				
+				
+				
+				localStorage.setItem ("balance", text);
+			
+				//console.log(raw_data)
+			});
+			
+			/*var data = localStorage.getItem ("balance");
+			//Loop
+			var text = "";
+			var i = 0;
+		    for (i = 0; i < data.length; i++) {
+		    	text += "<tr><td>"+data[i].coin_tag +"</td><td>"+data[i].balance+"</td><td>"+data[i].available+"</td><td>"+data[i].pending+"</td></tr>"
+		    };
+		    
+		    console.log(text)
+*/
+		</script>
+		-->
+		<!-- Load css -->
+		<link href="/css/style.css" rel="stylesheet" type="text/css">
+		<link href="/css/visible/visible_balance.css" rel="stylesheet" type="text/css">
+		
+		<!-- Load interface-->
+		<script src="/js/interface/interface_balance.js"></script>
+
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="balance">Balance</a></li>
+					<li><a href="select_market">Make order</a></li>
+					<li><a href="active">Coin running</a></li>
+					<li><a href="order">Order settings</a></li>
+					<!--<li><a href="">Software settings</a></li>-->
+				</ul>
+			</nav>				
+		</header>
+		<section>
+			<div id="blocked" align="center">
+				<h1>Your balance</h1>
+				<a href="javascript:zero_balance1()">Hidden 0 balance</a>
+			</div>
+			<div id="all_balance" align="center" class="zichtbaar">
+				<table border="1">
+					<tr>
+						<td>Coin tag</td>
+						<td>Coin balance</td>
+						<td>Coin available</td>
+						<td>Coin pending</td>
+					</tr>
+					<script type="text/javascript">		
+						var active = <%- balance %>;
+						
+						//Loop
+						var text = "";
+						var i = 0;
+				    	for (i = 0; i < active.length; i++) {
+				    		text += "<tr><td>"+active[i].coin_tag +"</td><td>"+active[i].balance+"</td><td>"+active[i].available+"</td><td>"+active[i].pending+"</td></tr>"
+				   		};
+				   		document.write(text);
+					</script>
+				</table>
+			</div>
+			<div id="zero_balance" class="verstopt">
+				<table border="1">
+					<tr>
+						<td>Coin tag</td>
+						<td>Coin balance</td>
+						<td>Coin available</td>
+						<td>Coin pending</td>
+					</tr>
+					<script type="text/javascript">		
+						
+						
+						var balance = <%- balance %>;
+						
+						var text1 = "";
+						var i = 0;
+		
+				    	for (i = 0; i < balance.length; i++) {
+				    		
+				    		if (balance[i].balance == "0" && balance[i].available == "0" && balance[i].pending == "0") {
+				    			
+				    		} else {
+				    			text1 += "<tr><td>"+balance[i].coin_tag +"</td><td>"+balance[i].balance+"</td><td>"+balance[i].available+"</td><td>"+active[i].pending+"</td></tr>"	
+				    		};
+				    	};
+				   		document.write(text1);
+					</script>
+				</table>
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+	</body>
+</html>

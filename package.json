@@ -1,0 +1,45 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "license": "",
+  "author": "",
+  "contributors": [
+    "micheldaniel"
+  ],
+  "main": "init.js",
+  "bin": {
+    "block-notify": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "express": "*",
+    "request": "*",
+    "auto-reload": "*",
+    "fs": "*",
+    "fs-extra": "*",
+    "http": "*",
+    "path": "*",
+    "jsonfile": "*",
+    "mkdirp": "*",
+    "terminal-tab": "*",
+    "event-stream": "*",
+    "JSONStream": "*",
+    "ejs": "*",
+    "body-parser": "*"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "devDependencies": {
+    "decache": "^3.0.5"
+  }
+}

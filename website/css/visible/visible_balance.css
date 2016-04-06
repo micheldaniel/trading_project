@@ -1,0 +1,7 @@
+#all_balance.verstopt, #zero_balance.verstopt {
+	display: none;
+}
+
+#all_balance.zichtbaar, #zero_balance.zichtbaar {
+	display: block;
+}

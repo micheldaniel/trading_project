@@ -1,0 +1,25 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+#order {
+	display: block;
+	clear:both;
+	position:relative;
+	text-align: left;
+}
+
+#orders {
+	width:800px;
+	border-top:1px solid #000;
+	background:#ddd;
+}
+
+#buy_orders,
+#ask_orders {
+	background-color: #ddd;
+	border: 4px;
+	float:left;
+	width:400px;
+}
